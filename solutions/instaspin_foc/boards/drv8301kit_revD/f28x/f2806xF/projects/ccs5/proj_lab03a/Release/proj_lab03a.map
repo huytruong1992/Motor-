@@ -1,0 +1,1698 @@
+******************************************************************************
+             TMS320C2000 Linker PC v6.2.7                      
+******************************************************************************
+>> Linked Mon Aug 01 10:03:18 2016
+
+OUTPUT FILE NAME:   <proj_lab03a.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000afcc
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  BEGIN                 00000000   00000002  00000002  00000000  RWIX
+  RAMM0                 00000050   000003b0  000000e1  000002cf  RWIX
+  RAML0_L8              00008000   0000b800  0000363b  000081c5  RWIX
+  FPUTABLES             003fd590   000006a0  00000000  000006a0  RWIX
+  IQTABLES              003fdc30   00000b50  00000b50  00000000  RWIX
+  IQTABLES2             003fe780   0000008c  00000000  0000008c  RWIX
+  IQTABLES3             003fe80c   000000aa  00000000  000000aa  RWIX
+  BOOTROM               003ff3b0   00000c10  00000000  00000c10  RWIX
+  RESET                 003fffc0   00000002  00000000  00000002  RWIX
+
+PAGE 1:
+  BOOT_RSVD             00000002   0000004e  00000000  0000004e  RWIX
+  RAMM1                 00000400   00000400  000003b0  00000050  RWIX
+  USB_RAM               00040000   00000800  00000000  00000800  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+codestart 
+*          0    00000000    00000002     
+                  00000000    00000002     CodeStartBranch.obj (codestart)
+
+.pinit     0    00000050    00000000     UNINITIALIZED
+
+.cinit     0    00000050    000000ab     
+                  00000050    0000008d     proj_lab03a.obj (.cinit)
+                  000000dd    0000000a     rts2800_ml.lib : _lock.obj (.cinit)
+                  000000e7    0000000a                    : exit.obj (.cinit)
+                  000000f1    00000004     drv8301.obj (.cinit)
+                  000000f5    00000004     rts2800_ml.lib : errno.obj (.cinit)
+                  000000f9    00000002     --HOLE-- [fill = 0]
+
+ramfuncs   0    000000fb    00000036     
+                  000000fb    00000032     flash.obj (ramfuncs)
+                  0000012d    00000004     usDelay.obj (ramfuncs)
+
+.text      0    00008000    000032ff     
+                  00008000    00000adb     hal.obj (.text)
+                  00008adb    0000095d     ctrl.obj (.text)
+                  00009438    0000048a     user.obj (.text)
+                  000098c2    000002f0     pwm.obj (.text)
+                  00009bb2    000002b8     drv8301.obj (.text)
+                  00009e6a    00000266     proj_lab03a.obj (.text)
+                  0000a0d0    000001fb     adc.obj (.text)
+                  0000a2cb    00000193     gpio.obj (.text)
+                  0000a45e    0000018a     clk.obj (.text)
+                  0000a5e8    0000017e     proj_lab03a.obj (.text:retain)
+                  0000a766    0000010e     pie.obj (.text)
+                  0000a874    000000ff     sci.obj (.text)
+                  0000a973    000000aa     rts2800_ml.lib : log.obj (.text)
+                  0000aa1d    000000a9     spi.obj (.text)
+                  0000aac6    0000009d     rts2800_ml.lib : exp.obj (.text)
+                  0000ab63    0000008d                    : _log.obj (.text)
+                  0000abf0    00000087                    : pow.obj (.text)
+                  0000ac77    00000083                    : fd_mpy.obj (.text)
+                  0000acfa    00000083                    : fs_div.obj (.text)
+                  0000ad7d    00000078                    : fs_add.obj (.text)
+                  0000adf5    0000005b     pll.obj (.text)
+                  0000ae50    0000005a     rts2800_ml.lib : fs_mpy.obj (.text)
+                  0000aeaa    00000050                    : sqrt.obj (.text)
+                  0000aefa    00000047     pwr.obj (.text)
+                  0000af41    00000046     wdog.obj (.text)
+                  0000af87    00000045     offset.obj (.text)
+                  0000afcc    00000044     rts2800_ml.lib : boot.obj (.text)
+                  0000b010    0000003f                    : ldexp.obj (.text)
+                  0000b04f    00000032     timer.obj (.text)
+                  0000b081    00000031     rts2800_ml.lib : modf.obj (.text)
+                  0000b0b2    0000002d     osc.obj (.text)
+                  0000b0df    00000029     rts2800_ml.lib : fs_tol.obj (.text)
+                  0000b108    00000027     cpu.obj (.text)
+                  0000b12f    00000025     rts2800_ml.lib : fs_toi.obj (.text)
+                  0000b154    00000022                    : i_div.obj (.text)
+                  0000b176    00000021     filter_fo.obj (.text)
+                  0000b197    00000021     rts2800_ml.lib : fs_toul.obj (.text)
+                  0000b1b8    00000020     flash.obj (.text)
+                  0000b1d8    0000001f     rts2800_ml.lib : fd_tol.obj (.text)
+                  0000b1f7    0000001d                    : fs_tou.obj (.text)
+                  0000b214    0000001c                    : fs_tofd.obj (.text)
+                  0000b230    0000001a                    : i_tofs.obj (.text)
+                  0000b24a    0000001a                    : l_tofs.obj (.text)
+                  0000b264    00000019                    : args_main.obj (.text)
+                  0000b27d    00000019                    : exit.obj (.text)
+                  0000b296    00000017                    : fs_cmp.obj (.text)
+                  0000b2ad    00000014                    : frexp.obj (.text)
+                  0000b2c1    00000013                    : ul_tofs.obj (.text)
+                  0000b2d4    00000010                    : u_tofs.obj (.text)
+                  0000b2e4    00000009                    : _lock.obj (.text)
+                  0000b2ed    00000008     CodeStartBranch.obj (.text)
+                  0000b2f5    00000005     pie.obj (.text:retain)
+                  0000b2fa    00000005     rts2800_ml.lib : fs_neg.obj (.text)
+
+.ebss      0    0000b300    0000026a     UNINITIALIZED
+                  0000b300    000001ac     proj_lab03a.obj (.ebss)
+                  0000b4ac    00000004     rts2800_ml.lib : _lock.obj (.ebss)
+                  0000b4b0    00000004                    : exit.obj (.ebss)
+                  0000b4b4    00000002     drv8301.obj (.ebss)
+                  0000b4b6    00000001     cpu.obj (.ebss)
+                  0000b4b7    00000001     rts2800_ml.lib : errno.obj (.ebss)
+                  0000b4b8    00000008     --HOLE--
+                  0000b4c0    000000aa     hal.obj (.ebss)
+
+IQmath     0    0000b56a    000000a6     
+                  0000b56a    00000042     IQmath.lib : IQ24sqrt.obj (IQmath)
+                  0000b5ac    00000029                : IQ24sinPU.obj (IQmath)
+                  0000b5d5    00000027                : IQ24cosPU.obj (IQmath)
+                  0000b5fc    00000014                : IQ30toF.obj (IQmath)
+
+.econst    0    0000b610    0000002c     
+                  0000b610    0000001c     ctrl.obj (.econst)
+                  0000b62c    00000008     user.obj (.econst)
+                  0000b634    00000004     hal.obj (.econst)
+                  0000b638    00000004     proj_lab03a.obj (.econst)
+
+IQmathTables 
+*          0    003fdc30    00000b50     NOLOAD SECTION
+                  003fdc30    00000b50     IQmath.lib : IQmathTables.obj (IQmathTables)
+
+.reset     0    003fffc0    00000002     DSECT
+                  003fffc0    00000002     rts2800_ml.lib : boot.obj (.reset)
+
+.stack     1    00000400    000003b0     UNINITIALIZED
+                  00000400    000003b0     --HOLE--
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000400      10 (00000400)     __stack
+
+0000b300     2cc (0000b300)     _gLEDcnt
+0000b301     2cc (0000b300)     _gBuzzcnt
+0000b302     2cc (0000b300)     _n
+0000b303     2cc (0000b300)     _gCounter_updateGlobals
+0000b304     2cc (0000b300)     _Flag_Latch_softwareUpdate
+0000b305     2cc (0000b300)     _i
+0000b306     2cc (0000b300)     _gTorque_Flux_Iq_pu_to_Nm_sf
+0000b308     2cc (0000b300)     _m
+0000b30a     2cc (0000b300)     _controller_obj
+0000b30c     2cc (0000b300)     _gFlux_pu_to_Wb_sf
+0000b30e     2cc (0000b300)     _gFlux_pu_to_VpHz_sf
+0000b310     2cc (0000b300)     _halHandle
+0000b312     2cc (0000b300)     _ctrlHandle
+0000b314     2cc (0000b300)     _gTorque_Ls_Id_Iq_pu_to_Nm_sf
+0000b316     2cc (0000b300)     _gMaxCurrentSlope
+0000b318     2cc (0000b300)     _data
+0000b31c     2cc (0000b300)     _gPwmData
+0000b322     2cc (0000b300)     _gAdcData
+
+0000b340     2cd (0000b340)     _gDrvSpi8301Vars
+
+0000b380     2ce (0000b380)     _gMotorVars
+
+0000b400     2d0 (0000b400)     _gUserParams
+
+0000b4ac     2d2 (0000b480)     __unlock
+0000b4ae     2d2 (0000b480)     __lock
+0000b4b0     2d2 (0000b480)     ___TI_cleanup_ptr
+0000b4b2     2d2 (0000b480)     ___TI_dtors_ptr
+0000b4b6     2d2 (0000b480)     _cpu
+0000b4b7     2d2 (0000b480)     _errno
+
+0000b4c0     2d3 (0000b4c0)     _hal
+
+0000b56a     2d5 (0000b540)     __IQ24sqrt
+
+0000b5ac     2d6 (0000b580)     __IQ24sinPU
+
+0000b5d5     2d7 (0000b5c0)     __IQ24cosPU
+0000b5fc     2d7 (0000b5c0)     __IQ30toF
+
+003fdc30    ff70 (003fdc00)     _IQsinTable
+
+003fdd30    ff74 (003fdd00)     _IQcosTable
+
+003fe030    ff80 (003fe000)     _IQsinTableEnd
+
+003fe132    ff84 (003fe100)     _IQcosTableEnd
+003fe132    ff84 (003fe100)     _IQdivRoundSatTable
+
+003fe140    ff85 (003fe140)     _IQdivTable
+
+003fe342    ff8d (003fe340)     _IQdivTableEnd
+003fe342    ff8d (003fe340)     _IQisqrtRoundSatTable
+003fe342    ff8d (003fe340)     _IQsqrtRoundSatTable
+003fe352    ff8d (003fe340)     _IQisqrtTable
+003fe352    ff8d (003fe340)     _IQsqrtTable
+
+003fe454    ff91 (003fe440)     _IQatan2HalfPITable
+003fe454    ff91 (003fe440)     _IQisqrtTableEnd
+003fe454    ff91 (003fe440)     _IQsqrtTableEnd
+
+003fe492    ff92 (003fe480)     _IQatan2Table
+
+003fe618    ff98 (003fe600)     _IQ30mpyRndSatTable
+003fe618    ff98 (003fe600)     _IQatan2TableEnd
+003fe618    ff98 (003fe600)     _IQmpyRndSatTable
+003fe624    ff98 (003fe600)     _IQ29mpyRndSatTable
+003fe630    ff98 (003fe600)     _IQ28mpyRndSatTable
+003fe63c    ff98 (003fe600)     _IQ27mpyRndSatTable
+
+003fe648    ff99 (003fe640)     _IQ26mpyRndSatTable
+003fe654    ff99 (003fe640)     _IQ25mpyRndSatTable
+003fe660    ff99 (003fe640)     _IQ24mpyRndSatTable
+003fe66c    ff99 (003fe640)     _IQ23mpyRndSatTable
+003fe678    ff99 (003fe640)     _IQ22mpyRndSatTable
+
+003fe684    ff9a (003fe680)     _IQ21mpyRndSatTable
+003fe690    ff9a (003fe680)     _IQ20mpyRndSatTable
+003fe69c    ff9a (003fe680)     _IQ19mpyRndSatTable
+003fe6a8    ff9a (003fe680)     _IQ18mpyRndSatTable
+003fe6b4    ff9a (003fe680)     _IQ17mpyRndSatTable
+
+003fe6c0    ff9b (003fe6c0)     _IQ16mpyRndSatTable
+003fe6cc    ff9b (003fe6c0)     _IQ15mpyRndSatTable
+003fe6d8    ff9b (003fe6c0)     _IQ14mpyRndSatTable
+003fe6e4    ff9b (003fe6c0)     _IQ13mpyRndSatTable
+003fe6f0    ff9b (003fe6c0)     _IQ12mpyRndSatTable
+003fe6fc    ff9b (003fe6c0)     _IQ11mpyRndSatTable
+
+003fe708    ff9c (003fe700)     _IQ10mpyRndSatTable
+003fe714    ff9c (003fe700)     _IQ9mpyRndSatTable
+003fe720    ff9c (003fe700)     _IQ8mpyRndSatTable
+003fe72c    ff9c (003fe700)     _IQ7mpyRndSatTable
+003fe738    ff9c (003fe700)     _IQ6mpyRndSatTable
+
+003fe744    ff9d (003fe740)     _IQ5mpyRndSatTable
+003fe750    ff9d (003fe740)     _IQ4mpyRndSatTable
+003fe75c    ff9d (003fe740)     _IQ3mpyRndSatTable
+003fe768    ff9d (003fe740)     _IQ2mpyRndSatTable
+003fe774    ff9d (003fe740)     _IQ1mpyRndSatTable
+
+003fe780    ff9e (003fe780)     _IQmpyRndSatTableEnd
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00008000   .text
+0000b27d   C$$EXIT
+0000ac77   FD$$MPY
+0000b1d8   FD$$TOL
+0000ad82   FS$$ADD
+0000b296   FS$$CMP
+0000acfa   FS$$DIV
+0000ae50   FS$$MPY
+0000b2fa   FS$$NEG
+0000ad7d   FS$$SUB
+0000b214   FS$$TOFD
+0000b12f   FS$$TOI
+0000b0df   FS$$TOL
+0000b1f7   FS$$TOU
+0000b197   FS$$TOUL
+0000b154   I$$DIV
+0000b165   I$$MOD
+0000b230   I$$TOFS
+0000b24a   L$$TOFS
+0000b2d4   U$$TOFS
+0000b2c1   UL$$TOFS
+0000a2c0   _ADC_disable
+0000a2b5   _ADC_disableBandGap
+0000a29a   _ADC_disableInt
+0000a28f   _ADC_disableNoOverlapMode
+0000a284   _ADC_disableRefBuffers
+0000a279   _ADC_disableVoltRefLoConv
+0000a26e   _ADC_enable
+0000a263   _ADC_enableBandGap
+0000a24c   _ADC_enableInt
+0000a241   _ADC_enableNoOverlapMode
+0000a236   _ADC_enableRefBuffers
+0000a22b   _ADC_enableVoltRefLoConv
+0000a223   _ADC_getDivideSelect
+0000a21c   _ADC_init
+0000a211   _ADC_powerDown
+0000a206   _ADC_powerUp
+0000a1fb   _ADC_reset
+0000a1e9   _ADC_setDivideSelect
+0000a1cc   _ADC_setIntMode
+0000a1ba   _ADC_setIntPulseGenMode
+0000a19d   _ADC_setIntSrc
+0000a196   _ADC_setOffTrim
+0000a17e   _ADC_setSampleMode
+0000a169   _ADC_setSampleOverlapMode
+0000a156   _ADC_setSocChanNumber
+0000a14c   _ADC_setSocFrc
+0000a145   _ADC_setSocFrcWord
+0000a132   _ADC_setSocSampleDelay
+0000a11f   _ADC_setSocTrigSrc
+0000a10d   _ADC_setTempSensorSrc
+0000a0fb   _ADC_setVoltRefSrc
+0000a0d0   _ADC_setupSocTrigSrc
+0000a5e1   _CLK_disableAdcClock
+0000a5da   _CLK_disableClaClock
+0000a5d4   _CLK_disableClkIn
+0000a5d0   _CLK_disableCompClock
+0000a5c9   _CLK_disableCpuTimerClock
+0000a5c3   _CLK_disableCrystalOsc
+0000a5bc   _CLK_disableEcanaClock
+0000a5b5   _CLK_disableEcap1Clock
+0000a5ae   _CLK_disableEqep1Clock
+0000a5a7   _CLK_disableEqep2Clock
+0000a5a0   _CLK_disableGpioInputClock
+0000a599   _CLK_disableHrPwmClock
+0000a592   _CLK_disableI2cClock
+0000a58b   _CLK_disableLinAClock
+0000a585   _CLK_disableOsc1
+0000a57f   _CLK_disableOsc1HaltMode
+0000a579   _CLK_disableOsc2
+0000a573   _CLK_disableOsc2HaltMode
+0000a569   _CLK_disablePwmClock
+0000a562   _CLK_disableSciaClock
+0000a55b   _CLK_disableScibClock
+0000a554   _CLK_disableSpiaClock
+0000a550   _CLK_disableSpibClock
+0000a549   _CLK_disableTbClockSync
+0000a543   _CLK_disableWatchDogHaltMode
+0000a53c   _CLK_enableAdcClock
+0000a535   _CLK_enableClaClock
+0000a52f   _CLK_enableClkIn
+0000a529   _CLK_enableCompClock
+0000a523   _CLK_enableCpuTimerClock
+0000a51d   _CLK_enableCrystalOsc
+0000a516   _CLK_enableEcanaClock
+0000a50f   _CLK_enableEcap1Clock
+0000a508   _CLK_enableEqep1Clock
+0000a501   _CLK_enableEqep2Clock
+0000a4fa   _CLK_enableGpioInputClock
+0000a4f3   _CLK_enableHrPwmClock
+0000a4ec   _CLK_enableI2cClock
+0000a4e5   _CLK_enableLinAClock
+0000a4df   _CLK_enableOsc1
+0000a4d9   _CLK_enableOsc1HaltMode
+0000a4d3   _CLK_enableOsc2
+0000a4cd   _CLK_enableOsc2HaltMode
+0000a4c4   _CLK_enablePwmClock
+0000a4bd   _CLK_enableSciaClock
+0000a4b6   _CLK_enableScibClock
+0000a4af   _CLK_enableSpiaClock
+0000a4a8   _CLK_enableSpibClock
+0000a4a1   _CLK_enableTbClockSync
+0000a49b   _CLK_enableWatchDogHaltMode
+0000a495   _CLK_init
+0000a48e   _CLK_setClkOutPreScaler
+0000a488   _CLK_setLowSpdPreScaler
+0000a481   _CLK_setOsc2Src
+0000a47a   _CLK_setOscSrc
+0000a473   _CLK_setTimer2PreScale
+0000a46c   _CLK_setTimer2Src
+0000a465   _CLK_setWatchDogSrc
+0000a45e   _CLK_setXClkInSrc
+0000b12c   _CPU_clearIntFlags
+0000b129   _CPU_disableDebugInt
+0000b126   _CPU_disableGlobalInts
+0000b121   _CPU_disableInt
+0000b11e   _CPU_disableInts
+0000b11b   _CPU_disableProtectedRegisterWrite
+0000b118   _CPU_enableDebugInt
+0000b115   _CPU_enableGlobalInts
+0000b111   _CPU_enableInt
+0000b10e   _CPU_enableProtectedRegisterWrite
+0000b108   _CPU_init
+000093fc   _CTRL_getGains
+000093f4   _CTRL_getIab_filt_pu
+000093ec   _CTRL_getIab_in_pu
+000093e4   _CTRL_getIdq_in_pu
+000093dc   _CTRL_getIdq_ref_pu
+00009435   _CTRL_getMagCurrent_pu
+00009432   _CTRL_getMaximumSpeed_pu
+000093d4   _CTRL_getVab_in_pu
+000093cc   _CTRL_getVab_out_pu
+000093c4   _CTRL_getVdq_out_pu
+003fa721   _CTRL_getVersion
+000093bb   _CTRL_getWaitTimes
+003fa6fb   _CTRL_initCtrl
+00008ea9   _CTRL_run
+003fa5d1   _CTRL_runTraj
+003f9e64   _CTRL_setEstParams
+00008c45   _CTRL_setGains
+0000942c   _CTRL_setMagCurrent_pu
+0000942f   _CTRL_setMaximumSpeed_pu
+00008c6d   _CTRL_setParams
+00008c32   _CTRL_setSpd_ref_krpm
+00008c2f   _CTRL_setSpd_ref_pu
+003f9d31   _CTRL_setUserMotorParams
+00008c26   _CTRL_setWaitTimes
+00008c1c   _CTRL_setup
+00008c00   _CTRL_setupClarke_I
+00008bea   _CTRL_setupClarke_V
+003f9b43   _CTRL_setupCtrl
+003f99a5   _CTRL_setupEstIdleState
+003f996a   _CTRL_setupEstOnLineState
+003f9806   _CTRL_setupTraj
+00008b8d   _CTRL_setup_user
+00008adb   _CTRL_updateState
+00009e48   _DRV8301_enable
+00009e36   _DRV8301_getDcCalMode
+00009e1b   _DRV8301_getFaultType
+00009e15   _DRV8301_getId
+00009e0e   _DRV8301_getOcLevel
+00009e07   _DRV8301_getOcMode
+00009e00   _DRV8301_getOcOffTimeMode
+00009df9   _DRV8301_getOcTwMode
+00009df2   _DRV8301_getPeakCurrent
+00009deb   _DRV8301_getPwmMode
+00009de4   _DRV8301_getShuntAmpGain
+00009ddb   _DRV8301_init
+00009dd5   _DRV8301_isFault
+00009dce   _DRV8301_isReset
+00009d63   _DRV8301_readData
+00009bf1   _DRV8301_readSpi
+00009d54   _DRV8301_reset
+00009d35   _DRV8301_setDcCalMode
+00009d33   _DRV8301_setGpioHandle
+00009d31   _DRV8301_setGpioNumber
+00009d1d   _DRV8301_setOcLevel
+00009d09   _DRV8301_setOcMode
+00009cf5   _DRV8301_setOcOffTimeMode
+00009ce1   _DRV8301_setOcTwMode
+00009ccd   _DRV8301_setPeakCurrent
+00009cb9   _DRV8301_setPwmMode
+00009ca5   _DRV8301_setShuntAmpGain
+00009ca3   _DRV8301_setSpiHandle
+00009c27   _DRV8301_setupSpi
+00009bc8   _DRV8301_writeData
+00009bb2   _DRV8301_writeSpi
+003f9760   _EST_doCurrentCtrl
+003f9758   _EST_doSpeedCtrl
+003f8c0d   _EST_getAngle_pu
+003f96be   _EST_getFlux_VpHz
+003f96ab   _EST_getFlux_pu
+003f968e   _EST_getFm_pu
+003f9632   _EST_getIdRated
+003f95ff   _EST_getLs_coarse_max_pu
+003f95f5   _EST_getLs_d_H
+003f95f0   _EST_getLs_d_pu
+003f95ce   _EST_getLs_q_H
+003f95c9   _EST_getLs_q_pu
+003f95bd   _EST_getMaxCurrentSlope_pu
+003f95b3   _EST_getOneOverDcBus_pu
+003f95ad   _EST_getRr_Ohm
+003f9513   _EST_getRs_Ohm
+003f94c6   _EST_getSpeed_krpm
+003f861b   _EST_getState
+003f9458   _EST_get_krpm_to_pu_sf
+003f9453   _EST_get_pu_to_krpm_sf
+003f938d   _EST_isError
+003f9386   _EST_isIdle
+003f937f   _EST_isLockRotor
+003f8679   _EST_isMotorIdentified
+003f9378   _EST_isOnLine
+003f927b   _EST_run
+003f8bdb   _EST_setFlag_enableForceAngle
+003f8b80   _EST_setId_ref_pu
+003f8b7a   _EST_setIdle
+003f8b67   _EST_setIdle_all
+003f8b63   _EST_setIq_ref_pu
+003f8b45   _EST_setLs_d_pu
+003f8af1   _EST_setLs_qFmt
+003f8ae7   _EST_setLs_q_pu
+003f8adb   _EST_setMaxCurrentSlope_pu
+003f8a18   _EST_setRs_pu
+003f89f5   _EST_updateId_ref_pu
+003f8713   _EST_updateState
+003f861d   _EST_useZeroIq_ref
+0000b194   _FILTER_FO_getDenCoeffs
+0000b18d   _FILTER_FO_getInitialConditions
+0000b187   _FILTER_FO_getNumCoeffs
+0000b181   _FILTER_FO_init
+0000b17f   _FILTER_FO_setDenCoeffs
+0000b17a   _FILTER_FO_setInitialConditions
+0000b176   _FILTER_FO_setNumCoeffs
+0000b1d2   _FLASH_clear3VStatus
+00000127   _FLASH_disablePipelineMode
+00000121   _FLASH_enablePipelineMode
+0000b1cf   _FLASH_get3VStatus
+0000b1cc   _FLASH_getActiveWaitCount
+0000b1c8   _FLASH_getActiveWaitStatus
+0000b1c5   _FLASH_getPowerMode
+0000b1c2   _FLASH_getStandbyWaitCount
+0000b1be   _FLASH_getStandbyWaitStatus
+0000b1b8   _FLASH_init
+0000011c   _FLASH_setActiveWaitCount
+00000115   _FLASH_setNumPagedReadWaitStates
+0000010e   _FLASH_setNumRandomReadWaitStates
+00000107   _FLASH_setOtpWaitStates
+00000100   _FLASH_setPowerMode
+000000fb   _FLASH_setStandbyWaitCount
+0000b304   _Flag_Latch_softwareUpdate
+0000a44e   _GPIO_getData
+0000a447   _GPIO_getPortData
+0000a441   _GPIO_init
+0000a437   _GPIO_lpmSelect
+0000a411   _GPIO_read
+0000a3f6   _GPIO_setDirection
+0000a3eb   _GPIO_setExtInt
+0000a3d8   _GPIO_setHigh
+0000a3c5   _GPIO_setLow
+0000a38b   _GPIO_setMode
+0000a380   _GPIO_setPortData
+0000a365   _GPIO_setPullup
+0000a325   _GPIO_setQualification
+0000a2de   _GPIO_setQualificationPeriod
+0000a2cb   _GPIO_toggle
+000085d3   _HAL_AdcCalChanSelect
+0000862a   _HAL_AdcCalConversion
+00008781   _HAL_AdcOffsetSelfCal
+00008846   _HAL_OscTempComp
+00008899   _HAL_cal
+00008ad7   _HAL_disableGlobalInts
+000089be   _HAL_disableWdog
+00008ac5   _HAL_enableAdcInts
+00008ac1   _HAL_enableDebugInt
+00008abc   _HAL_enableDrv
+00008ab8   _HAL_enableGlobalInts
+00008aa7   _HAL_enablePwmInt
+00008a97   _HAL_enableTimer0Int
+000087b4   _HAL_getOscTrimValue
+000089c3   _HAL_init
+000087c8   _HAL_osc1Comp
+00008807   _HAL_osc2Comp
+000089b9   _HAL_readDrvData
+000088b0   _HAL_setParams
+0000851b   _HAL_setupAdcs
+000084ff   _HAL_setupClks
+000084fa   _HAL_setupDrvSpi
+000084db   _HAL_setupFaults
+000084b7   _HAL_setupFlash
+000084a2   _HAL_setupGate
+000082fd   _HAL_setupGpios
+000082b0   _HAL_setupPeripheralClks
+00008294   _HAL_setupPie
+00008256   _HAL_setupPll
+000081cb   _HAL_setupPwmDacs
+00008103   _HAL_setupPwms
+000080b8   _HAL_setupSCI
+00008072   _HAL_setupSpiA
+0000803c   _HAL_setupSpiB
+00008005   _HAL_setupTimers
+00008000   _HAL_writeDrvData
+003fe708   _IQ10mpyRndSatTable
+003fe6fc   _IQ11mpyRndSatTable
+003fe6f0   _IQ12mpyRndSatTable
+003fe6e4   _IQ13mpyRndSatTable
+003fe6d8   _IQ14mpyRndSatTable
+003fe6cc   _IQ15mpyRndSatTable
+003fe6c0   _IQ16mpyRndSatTable
+003fe6b4   _IQ17mpyRndSatTable
+003fe6a8   _IQ18mpyRndSatTable
+003fe69c   _IQ19mpyRndSatTable
+003fe774   _IQ1mpyRndSatTable
+003fe690   _IQ20mpyRndSatTable
+003fe684   _IQ21mpyRndSatTable
+003fe678   _IQ22mpyRndSatTable
+003fe66c   _IQ23mpyRndSatTable
+003fe660   _IQ24mpyRndSatTable
+003fe654   _IQ25mpyRndSatTable
+003fe648   _IQ26mpyRndSatTable
+003fe63c   _IQ27mpyRndSatTable
+003fe630   _IQ28mpyRndSatTable
+003fe624   _IQ29mpyRndSatTable
+003fe768   _IQ2mpyRndSatTable
+003fe618   _IQ30mpyRndSatTable
+003fe75c   _IQ3mpyRndSatTable
+003fe750   _IQ4mpyRndSatTable
+003fe744   _IQ5mpyRndSatTable
+003fe738   _IQ6mpyRndSatTable
+003fe72c   _IQ7mpyRndSatTable
+003fe720   _IQ8mpyRndSatTable
+003fe714   _IQ9mpyRndSatTable
+003fe454   _IQatan2HalfPITable
+003fe492   _IQatan2Table
+003fe618   _IQatan2TableEnd
+003fdd30   _IQcosTable
+003fe132   _IQcosTableEnd
+003fe132   _IQdivRoundSatTable
+003fe140   _IQdivTable
+003fe342   _IQdivTableEnd
+003fe342   _IQisqrtRoundSatTable
+003fe352   _IQisqrtTable
+003fe454   _IQisqrtTableEnd
+003fe618   _IQmpyRndSatTable
+003fe780   _IQmpyRndSatTableEnd
+003fdc30   _IQsinTable
+003fe030   _IQsinTableEnd
+003fe342   _IQsqrtRoundSatTable
+003fe352   _IQsqrtTable
+003fe454   _IQsqrtTableEnd
+0000afbf   _OFFSET_getBeta
+0000afae   _OFFSET_init
+0000af98   _OFFSET_setBeta
+0000af89   _OFFSET_setInitCond
+0000af87   _OFFSET_setOffset
+0000b0d9   _OSC_init
+0000b0cc   _OSC_setCoarseTrim
+0000b0bb   _OSC_setFineTrim
+0000b0b2   _OSC_setTrim
+0000a86a   _PIE_clearAllFlags
+0000a867   _PIE_clearAllInts
+0000a864   _PIE_disable
+0000a85a   _PIE_disableAllInts
+0000a856   _PIE_disableCaptureInt
+0000a849   _PIE_disableExtInt
+0000a83e   _PIE_disableInt
+0000a83b   _PIE_enable
+0000a81f   _PIE_enableAdcInt
+0000a81b   _PIE_enableCaptureInt
+0000a7f8   _PIE_enableExtInt
+0000a7ee   _PIE_enableInt
+0000a7e9   _PIE_enablePwmInt
+0000a7e4   _PIE_enablePwmTzInt
+0000a7e1   _PIE_enableTimer0Int
+0000a7d7   _PIE_forceInt
+0000a7cf   _PIE_getExtIntCount
+0000a7c8   _PIE_getIntEnables
+0000a7c1   _PIE_getIntFlags
+0000b2f5   _PIE_illegalIsr
+0000a7ba   _PIE_init
+0000a7ab   _PIE_registerPieIntHandler
+0000a7a0   _PIE_registerSystemIntHandler
+0000a794   _PIE_setDefaultIntVectorTable
+0000a784   _PIE_setExtIntPolarity
+0000a773   _PIE_unregisterPieIntHandler
+0000a766   _PIE_unregisterSystemIntHandler
+0000ae4a   _PLL_disable
+0000ae44   _PLL_disableClkDetect
+0000ae3e   _PLL_disableNormRdy
+0000ae38   _PLL_disableOsc
+0000ae32   _PLL_enable
+0000ae2c   _PLL_enableClkDetect
+0000ae26   _PLL_enableNormRdy
+0000ae20   _PLL_enableOsc
+0000ae1c   _PLL_getClkFreq
+0000ae19   _PLL_getClkStatus
+0000ae16   _PLL_getDivideSelect
+0000ae13   _PLL_getLockStatus
+0000ae0d   _PLL_init
+0000ae07   _PLL_resetClkDetect
+0000ae01   _PLL_setClkFreq
+0000adfa   _PLL_setDivideSelect
+0000adf5   _PLL_setLockPeriod
+00009bac   _PWM_clearTripZone
+00009ba9   _PWM_decrementDeadBandFallingEdgeDelay
+00009ba6   _PWM_decrementDeadBandRisingEdgeDelay
+00009b9f   _PWM_disableAutoConvert
+00009b9b   _PWM_disableChopping
+00009b98   _PWM_disableCounterLoad
+00009b95   _PWM_disableDeadBand
+00009b91   _PWM_disableDeadBandHalfCycle
+00009b8a   _PWM_disableDigitalCompareBlankingWindow
+00009b83   _PWM_disableDigitalCompareBlankingWindowInversion
+00009b7c   _PWM_disableHrPeriod
+00009b75   _PWM_disableHrPhaseSync
+00009b71   _PWM_disableInt
+00009b6d   _PWM_disableSocAPulse
+00009b69   _PWM_disableSocBPulse
+00009b62   _PWM_disableTripZoneInt
+00009b5b   _PWM_disableTripZoneSrc
+00009b55   _PWM_disableTripZones
+00009b4e   _PWM_enableAutoConvert
+00009b4a   _PWM_enableChopping
+00009b47   _PWM_enableCounterLoad
+00009b43   _PWM_enableDeadBandHalfCycle
+00009b3c   _PWM_enableDigitalCompareBlankingWindow
+00009b35   _PWM_enableDigitalCompareBlankingWindowInversion
+00009b2e   _PWM_enableHrPeriod
+00009b27   _PWM_enableHrPhaseSync
+00009b23   _PWM_enableInt
+00009b1f   _PWM_enableSocAPulse
+00009b1b   _PWM_enableSocBPulse
+00009b15   _PWM_enableTripZoneInt
+00009b0f   _PWM_enableTripZoneSrc
+00009b0c   _PWM_getDeadBandFallingEdgeDelay
+00009b09   _PWM_getDeadBandRisingEdgeDelay
+00009b05   _PWM_getIntCount
+00009b01   _PWM_getShadowStatus_CmpA
+00009afd   _PWM_getShadowStatus_CmpB
+00009af8   _PWM_getSocACount
+00009af3   _PWM_getSocBCount
+00009af0   _PWM_incrementDeadBandFallingEdgeDelay
+00009aed   _PWM_incrementDeadBandRisingEdgeDelay
+00009ae7   _PWM_init
+00009ae0   _PWM_setActionQualContSWForce_PwmA
+00009ad7   _PWM_setActionQualContSWForce_PwmB
+00009ace   _PWM_setActionQual_CntDown_CmpA_PwmA
+00009ac5   _PWM_setActionQual_CntDown_CmpA_PwmB
+00009abc   _PWM_setActionQual_CntDown_CmpB_PwmA
+00009ab3   _PWM_setActionQual_CntDown_CmpB_PwmB
+00009aaa   _PWM_setActionQual_CntUp_CmpA_PwmA
+00009aa1   _PWM_setActionQual_CntUp_CmpA_PwmB
+00009a98   _PWM_setActionQual_CntUp_CmpB_PwmA
+00009a8f   _PWM_setActionQual_CntUp_CmpB_PwmB
+00009a86   _PWM_setActionQual_Period_PwmA
+00009a7d   _PWM_setActionQual_Period_PwmB
+00009a76   _PWM_setActionQual_Zero_PwmA
+00009a6f   _PWM_setActionQual_Zero_PwmB
+00009a68   _PWM_setChoppingClkFreq
+00009a61   _PWM_setChoppingDutyCycle
+00009a5a   _PWM_setChoppingPulseWidth
+00009a56   _PWM_setClkDiv
+00009a54   _PWM_setCount
+00009a50   _PWM_setCounterMode
+00009a4d   _PWM_setDeadBandFallingEdgeDelay
+00009a46   _PWM_setDeadBandInputMode
+00009a3f   _PWM_setDeadBandOutputMode
+00009a38   _PWM_setDeadBandPolarity
+00009a35   _PWM_setDeadBandRisingEdgeDelay
+00009a1e   _PWM_setDigitalCompareAEvent1
+00009a0e   _PWM_setDigitalCompareAEvent2
+000099f7   _PWM_setDigitalCompareBEvent1
+000099e7   _PWM_setDigitalCompareBEvent2
+000099db   _PWM_setDigitalCompareBlankingPulse
+000099d8   _PWM_setDigitalCompareFilterOffset
+000099ce   _PWM_setDigitalCompareFilterSource
+000099cb   _PWM_setDigitalCompareFilterWindow
+000099bc   _PWM_setDigitalCompareInput
+000099b8   _PWM_setHighSpeedClkDiv
+000099ae   _PWM_setHrControlMode
+000099a4   _PWM_setHrEdgeMode
+0000999a   _PWM_setHrShadowMode
+00009993   _PWM_setIntMode
+0000998c   _PWM_setIntPeriod
+00009988   _PWM_setLoadMode_CmpA
+00009982   _PWM_setLoadMode_CmpB
+00009980   _PWM_setPeriod
+0000997b   _PWM_setPeriodHr
+00009977   _PWM_setPeriodLoad
+00009975   _PWM_setPhase
+00009971   _PWM_setPhaseDir
+0000996d   _PWM_setRunMode
+00009967   _PWM_setShadowMode_CmpA
+00009961   _PWM_setShadowMode_CmpB
+00009958   _PWM_setSocAPeriod
+0000994f   _PWM_setSocAPulseSrc
+00009946   _PWM_setSocBPeriod
+0000993d   _PWM_setSocBPulseSrc
+0000993a   _PWM_setSwSync
+00009936   _PWM_setSyncMode
+0000992c   _PWM_setTripZoneDCEventSelect_DCAEVT1
+00009920   _PWM_setTripZoneDCEventSelect_DCAEVT2
+00009914   _PWM_setTripZoneDCEventSelect_DCBEVT1
+00009908   _PWM_setTripZoneDCEventSelect_DCBEVT2
+000098fc   _PWM_setTripZoneState_DCAEVT1
+000098f0   _PWM_setTripZoneState_DCAEVT2
+000098e4   _PWM_setTripZoneState_DCBEVT1
+000098d8   _PWM_setTripZoneState_DCBEVT2
+000098ce   _PWM_setTripZoneState_TZA
+000098c2   _PWM_setTripZoneState_TZB
+0000af3e   _PWR_disableBrownOutReset
+0000af33   _PWR_disableWatchDogInt
+0000af30   _PWR_enableBrownOutReset
+0000af25   _PWR_enableWatchDogInt
+0000af1e   _PWR_init
+0000af0c   _PWR_setLowPowerMode
+0000aefa   _PWR_setNumStandByClocks
+00000131   _RamfuncsLoadEnd
+00000036   _RamfuncsLoadSize
+000000fb   _RamfuncsLoadStart
+000000fb   _RamfuncsRunStart
+0000a6a9   _SCI_RX_ISR
+0000a96f   _SCI_clearAutoBaudDetect
+0000a96b   _SCI_clearRxFifoInt
+0000a967   _SCI_clearRxFifoOvf
+0000a963   _SCI_clearTxFifoInt
+0000a960   _SCI_disable
+0000a95c   _SCI_disableAutoBaudAlign
+0000a959   _SCI_disableLoopBack
+0000a956   _SCI_disableParity
+0000a953   _SCI_disableRx
+0000a950   _SCI_disableRxErrorInt
+0000a94c   _SCI_disableRxFifoInt
+0000a949   _SCI_disableRxInt
+0000a946   _SCI_disableSleep
+0000a943   _SCI_disableTx
+0000a93f   _SCI_disableTxFifoEnh
+0000a93b   _SCI_disableTxFifoInt
+0000a938   _SCI_disableTxInt
+0000a935   _SCI_disableTxWake
+0000a932   _SCI_enable
+0000a92e   _SCI_enableAutoBaudAlign
+0000a92a   _SCI_enableChannels
+0000a927   _SCI_enableLoopBack
+0000a924   _SCI_enableParity
+0000a921   _SCI_enableRx
+0000a91e   _SCI_enableRxErrorInt
+0000a91a   _SCI_enableRxFifo
+0000a916   _SCI_enableRxFifoInt
+0000a913   _SCI_enableRxInt
+0000a910   _SCI_enableSleep
+0000a90d   _SCI_enableTx
+0000a909   _SCI_enableTxFifo
+0000a905   _SCI_enableTxFifoEnh
+0000a901   _SCI_enableTxFifoInt
+0000a8fe   _SCI_enableTxInt
+0000a8fb   _SCI_enableTxWake
+0000a8f7   _SCI_getDataBlocking
+0000a8ee   _SCI_getDataNonBlocking
+0000a8ea   _SCI_getRxFifoStatus
+0000a874   _SCI_getTxFifoStatus
+0000a8e4   _SCI_init
+0000a8df   _SCI_putDataBlocking
+0000a8d7   _SCI_putDataNonBlocking
+0000a8d4   _SCI_reset
+0000a8ca   _SCI_resetChannels
+0000a8c0   _SCI_resetRxFifo
+0000a8b6   _SCI_resetTxFifo
+0000a8b0   _SCI_setBaudRate
+0000a8ac   _SCI_setCharLength
+0000a8a8   _SCI_setMode
+0000a8a4   _SCI_setNumStopBits
+0000a8a0   _SCI_setParity
+0000a89d   _SCI_setPriority
+0000a896   _SCI_setRxFifoIntLevel
+0000a88f   _SCI_setTxDelay
+0000a888   _SCI_setTxFifoIntLevel
+0000a878   _SCI_write_char
+0000a881   _SCI_write_str
+0000aac2   _SPI_clearRxFifoInt
+0000aabe   _SPI_clearRxFifoOvf
+0000aaba   _SPI_clearTxFifoInt
+0000aab7   _SPI_disableInt
+0000aab4   _SPI_disableLoopBack
+0000aab1   _SPI_disableOverRunInt
+0000aaad   _SPI_disableRxFifoInt
+0000aaaa   _SPI_disableTx
+0000aaa6   _SPI_disableTxFifoEnh
+0000aaa2   _SPI_disableTxFifoInt
+0000aa9f   _SPI_enable
+0000aa9b   _SPI_enableChannels
+0000aa98   _SPI_enableInt
+0000aa95   _SPI_enableLoopBack
+0000aa92   _SPI_enableOverRunInt
+0000aa8e   _SPI_enableRxFifo
+0000aa8a   _SPI_enableRxFifoInt
+0000aa87   _SPI_enableTx
+0000aa83   _SPI_enableTxFifo
+0000aa7f   _SPI_enableTxFifoEnh
+0000aa7b   _SPI_enableTxFifoInt
+0000aa78   _SPI_getIntFlagStatus
+0000aa74   _SPI_getRxFifoStatus
+0000aa71   _SPI_getTxBufferStatus
+0000aa6d   _SPI_getTxFifoStatus
+0000aa67   _SPI_init
+0000aa64   _SPI_reset
+0000aa60   _SPI_resetChannels
+0000aa5c   _SPI_resetRxFifo
+0000aa58   _SPI_resetTxFifo
+0000aa56   _SPI_setBaudRate
+0000aa52   _SPI_setCharLength
+0000aa50   _SPI_setClkPhase
+0000aa4c   _SPI_setClkPolarity
+0000aa4a   _SPI_setMode
+0000aa43   _SPI_setPriority
+0000aa3c   _SPI_setRxFifoIntLevel
+0000aa35   _SPI_setSteInv
+0000aa2e   _SPI_setSuspend
+0000aa27   _SPI_setTriWire
+0000aa24   _SPI_setTxDelay
+0000aa1d   _SPI_setTxFifoIntLevel
+0000b07e   _TIMER_clearFlag
+0000b07b   _TIMER_disableInt
+0000b078   _TIMER_enableInt
+0000b075   _TIMER_getStatus
+0000b06f   _TIMER_init
+0000b061   _TIMER_setDecimationFactor
+0000b05d   _TIMER_setEmulationMode
+0000b04f   _TIMER_setPreScaler
+00009811   _USER_calcPIgains
+0000980d   _USER_checkForErrors
+000097ff   _USER_computeFlux
+000097b4   _USER_computeFlux_pu_to_VpHz_sf
+00009769   _USER_computeFlux_pu_to_Wb_sf
+0000971e   _USER_computeTorque_Flux_Iq_pu_to_Nm_sf
+000096d5   _USER_computeTorque_Ls_Id_Iq_pu_to_Nm_sf
+00009689   _USER_computeTorque_Nm
+00009632   _USER_computeTorque_lbin
+0000962f   _USER_getErrorCode
+0000962c   _USER_setErrorCode
+000094c6   _USER_setParams
+00009438   _USER_softwareUpdate1p6
+0000af7f   _WDOG_clearCounter
+0000af77   _WDOG_disable
+0000af71   _WDOG_disableInt
+0000af6b   _WDOG_disableOverRide
+0000af62   _WDOG_enable
+0000af5c   _WDOG_enableInt
+0000af56   _WDOG_enableOverRide
+0000af53   _WDOG_getIntStatus
+0000af4d   _WDOG_init
+0000af4b   _WDOG_setCount
+0000af41   _WDOG_setPreScaler
+0000b5d5   __IQ24cosPU
+0000b5ac   __IQ24sinPU
+0000b56a   __IQ24sqrt
+0000b5fc   __IQ30toF
+000007b0   __STACK_END
+000003b0   __STACK_SIZE
+00000001   __TI_args_main
+0000b4b0   ___TI_cleanup_ptr
+0000b4b2   ___TI_dtors_ptr
+ffffffff   ___binit__
+ffffffff   ___c_args__
+00000050   ___cinit__
+0000b2ff   ___etext__
+ffffffff   ___pinit__
+00008000   ___text__
+0000b264   __args_main
+0000b4ae   __lock
+0000ab63   __log
+0000b2ec   __nop
+0000b2e8   __register_lock
+0000b2e4   __register_unlock
+00000400   __stack
+0000b4ac   __unlock
+0000b27d   _abort
+0000afcc   _c_int00
+0000b30a   _controller_obj
+0000b4b6   _cpu
+0000b312   _ctrlHandle
+0000b318   _data
+0000b4b7   _errno
+0000b27f   _exit
+0000aac6   _exp
+0000b2ad   _frexp
+0000b322   _gAdcData
+0000b301   _gBuzzcnt
+0000b303   _gCounter_updateGlobals
+0000b340   _gDrvSpi8301Vars
+0000b30e   _gFlux_pu_to_VpHz_sf
+0000b30c   _gFlux_pu_to_Wb_sf
+0000b300   _gLEDcnt
+0000b316   _gMaxCurrentSlope
+0000b380   _gMotorVars
+0000b31c   _gPwmData
+0000b306   _gTorque_Flux_Iq_pu_to_Nm_sf
+0000b314   _gTorque_Ls_Id_Iq_pu_to_Nm_sf
+0000b400   _gUserParams
+0000b4c0   _hal
+0000b310   _halHandle
+0000b305   _i
+0000b010   _ldexp
+0000a973   _log
+0000b308   _m
+00009edd   _main
+0000a5e8   _mainISR
+0000b081   _modf
+0000b302   _n
+0000abf0   _pow
+0000aeaa   _sqrt
+00009e6a   _updateGlobalVariables_motor
+0000012d   _usDelay
+ffffffff   binit
+00000050   cinit
+00000000   code_start
+0000b2ff   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   code_start
+00000001   __TI_args_main
+00000036   _RamfuncsLoadSize
+00000050   ___cinit__
+00000050   cinit
+000000fb   _FLASH_setStandbyWaitCount
+000000fb   _RamfuncsLoadStart
+000000fb   _RamfuncsRunStart
+00000100   _FLASH_setPowerMode
+00000107   _FLASH_setOtpWaitStates
+0000010e   _FLASH_setNumRandomReadWaitStates
+00000115   _FLASH_setNumPagedReadWaitStates
+0000011c   _FLASH_setActiveWaitCount
+00000121   _FLASH_enablePipelineMode
+00000127   _FLASH_disablePipelineMode
+0000012d   _usDelay
+00000131   _RamfuncsLoadEnd
+000003b0   __STACK_SIZE
+00000400   __stack
+000007b0   __STACK_END
+00008000   .text
+00008000   _HAL_writeDrvData
+00008000   ___text__
+00008005   _HAL_setupTimers
+0000803c   _HAL_setupSpiB
+00008072   _HAL_setupSpiA
+000080b8   _HAL_setupSCI
+00008103   _HAL_setupPwms
+000081cb   _HAL_setupPwmDacs
+00008256   _HAL_setupPll
+00008294   _HAL_setupPie
+000082b0   _HAL_setupPeripheralClks
+000082fd   _HAL_setupGpios
+000084a2   _HAL_setupGate
+000084b7   _HAL_setupFlash
+000084db   _HAL_setupFaults
+000084fa   _HAL_setupDrvSpi
+000084ff   _HAL_setupClks
+0000851b   _HAL_setupAdcs
+000085d3   _HAL_AdcCalChanSelect
+0000862a   _HAL_AdcCalConversion
+00008781   _HAL_AdcOffsetSelfCal
+000087b4   _HAL_getOscTrimValue
+000087c8   _HAL_osc1Comp
+00008807   _HAL_osc2Comp
+00008846   _HAL_OscTempComp
+00008899   _HAL_cal
+000088b0   _HAL_setParams
+000089b9   _HAL_readDrvData
+000089be   _HAL_disableWdog
+000089c3   _HAL_init
+00008a97   _HAL_enableTimer0Int
+00008aa7   _HAL_enablePwmInt
+00008ab8   _HAL_enableGlobalInts
+00008abc   _HAL_enableDrv
+00008ac1   _HAL_enableDebugInt
+00008ac5   _HAL_enableAdcInts
+00008ad7   _HAL_disableGlobalInts
+00008adb   _CTRL_updateState
+00008b8d   _CTRL_setup_user
+00008bea   _CTRL_setupClarke_V
+00008c00   _CTRL_setupClarke_I
+00008c1c   _CTRL_setup
+00008c26   _CTRL_setWaitTimes
+00008c2f   _CTRL_setSpd_ref_pu
+00008c32   _CTRL_setSpd_ref_krpm
+00008c45   _CTRL_setGains
+00008c6d   _CTRL_setParams
+00008ea9   _CTRL_run
+000093bb   _CTRL_getWaitTimes
+000093c4   _CTRL_getVdq_out_pu
+000093cc   _CTRL_getVab_out_pu
+000093d4   _CTRL_getVab_in_pu
+000093dc   _CTRL_getIdq_ref_pu
+000093e4   _CTRL_getIdq_in_pu
+000093ec   _CTRL_getIab_in_pu
+000093f4   _CTRL_getIab_filt_pu
+000093fc   _CTRL_getGains
+0000942c   _CTRL_setMagCurrent_pu
+0000942f   _CTRL_setMaximumSpeed_pu
+00009432   _CTRL_getMaximumSpeed_pu
+00009435   _CTRL_getMagCurrent_pu
+00009438   _USER_softwareUpdate1p6
+000094c6   _USER_setParams
+0000962c   _USER_setErrorCode
+0000962f   _USER_getErrorCode
+00009632   _USER_computeTorque_lbin
+00009689   _USER_computeTorque_Nm
+000096d5   _USER_computeTorque_Ls_Id_Iq_pu_to_Nm_sf
+0000971e   _USER_computeTorque_Flux_Iq_pu_to_Nm_sf
+00009769   _USER_computeFlux_pu_to_Wb_sf
+000097b4   _USER_computeFlux_pu_to_VpHz_sf
+000097ff   _USER_computeFlux
+0000980d   _USER_checkForErrors
+00009811   _USER_calcPIgains
+000098c2   _PWM_setTripZoneState_TZB
+000098ce   _PWM_setTripZoneState_TZA
+000098d8   _PWM_setTripZoneState_DCBEVT2
+000098e4   _PWM_setTripZoneState_DCBEVT1
+000098f0   _PWM_setTripZoneState_DCAEVT2
+000098fc   _PWM_setTripZoneState_DCAEVT1
+00009908   _PWM_setTripZoneDCEventSelect_DCBEVT2
+00009914   _PWM_setTripZoneDCEventSelect_DCBEVT1
+00009920   _PWM_setTripZoneDCEventSelect_DCAEVT2
+0000992c   _PWM_setTripZoneDCEventSelect_DCAEVT1
+00009936   _PWM_setSyncMode
+0000993a   _PWM_setSwSync
+0000993d   _PWM_setSocBPulseSrc
+00009946   _PWM_setSocBPeriod
+0000994f   _PWM_setSocAPulseSrc
+00009958   _PWM_setSocAPeriod
+00009961   _PWM_setShadowMode_CmpB
+00009967   _PWM_setShadowMode_CmpA
+0000996d   _PWM_setRunMode
+00009971   _PWM_setPhaseDir
+00009975   _PWM_setPhase
+00009977   _PWM_setPeriodLoad
+0000997b   _PWM_setPeriodHr
+00009980   _PWM_setPeriod
+00009982   _PWM_setLoadMode_CmpB
+00009988   _PWM_setLoadMode_CmpA
+0000998c   _PWM_setIntPeriod
+00009993   _PWM_setIntMode
+0000999a   _PWM_setHrShadowMode
+000099a4   _PWM_setHrEdgeMode
+000099ae   _PWM_setHrControlMode
+000099b8   _PWM_setHighSpeedClkDiv
+000099bc   _PWM_setDigitalCompareInput
+000099cb   _PWM_setDigitalCompareFilterWindow
+000099ce   _PWM_setDigitalCompareFilterSource
+000099d8   _PWM_setDigitalCompareFilterOffset
+000099db   _PWM_setDigitalCompareBlankingPulse
+000099e7   _PWM_setDigitalCompareBEvent2
+000099f7   _PWM_setDigitalCompareBEvent1
+00009a0e   _PWM_setDigitalCompareAEvent2
+00009a1e   _PWM_setDigitalCompareAEvent1
+00009a35   _PWM_setDeadBandRisingEdgeDelay
+00009a38   _PWM_setDeadBandPolarity
+00009a3f   _PWM_setDeadBandOutputMode
+00009a46   _PWM_setDeadBandInputMode
+00009a4d   _PWM_setDeadBandFallingEdgeDelay
+00009a50   _PWM_setCounterMode
+00009a54   _PWM_setCount
+00009a56   _PWM_setClkDiv
+00009a5a   _PWM_setChoppingPulseWidth
+00009a61   _PWM_setChoppingDutyCycle
+00009a68   _PWM_setChoppingClkFreq
+00009a6f   _PWM_setActionQual_Zero_PwmB
+00009a76   _PWM_setActionQual_Zero_PwmA
+00009a7d   _PWM_setActionQual_Period_PwmB
+00009a86   _PWM_setActionQual_Period_PwmA
+00009a8f   _PWM_setActionQual_CntUp_CmpB_PwmB
+00009a98   _PWM_setActionQual_CntUp_CmpB_PwmA
+00009aa1   _PWM_setActionQual_CntUp_CmpA_PwmB
+00009aaa   _PWM_setActionQual_CntUp_CmpA_PwmA
+00009ab3   _PWM_setActionQual_CntDown_CmpB_PwmB
+00009abc   _PWM_setActionQual_CntDown_CmpB_PwmA
+00009ac5   _PWM_setActionQual_CntDown_CmpA_PwmB
+00009ace   _PWM_setActionQual_CntDown_CmpA_PwmA
+00009ad7   _PWM_setActionQualContSWForce_PwmB
+00009ae0   _PWM_setActionQualContSWForce_PwmA
+00009ae7   _PWM_init
+00009aed   _PWM_incrementDeadBandRisingEdgeDelay
+00009af0   _PWM_incrementDeadBandFallingEdgeDelay
+00009af3   _PWM_getSocBCount
+00009af8   _PWM_getSocACount
+00009afd   _PWM_getShadowStatus_CmpB
+00009b01   _PWM_getShadowStatus_CmpA
+00009b05   _PWM_getIntCount
+00009b09   _PWM_getDeadBandRisingEdgeDelay
+00009b0c   _PWM_getDeadBandFallingEdgeDelay
+00009b0f   _PWM_enableTripZoneSrc
+00009b15   _PWM_enableTripZoneInt
+00009b1b   _PWM_enableSocBPulse
+00009b1f   _PWM_enableSocAPulse
+00009b23   _PWM_enableInt
+00009b27   _PWM_enableHrPhaseSync
+00009b2e   _PWM_enableHrPeriod
+00009b35   _PWM_enableDigitalCompareBlankingWindowInversion
+00009b3c   _PWM_enableDigitalCompareBlankingWindow
+00009b43   _PWM_enableDeadBandHalfCycle
+00009b47   _PWM_enableCounterLoad
+00009b4a   _PWM_enableChopping
+00009b4e   _PWM_enableAutoConvert
+00009b55   _PWM_disableTripZones
+00009b5b   _PWM_disableTripZoneSrc
+00009b62   _PWM_disableTripZoneInt
+00009b69   _PWM_disableSocBPulse
+00009b6d   _PWM_disableSocAPulse
+00009b71   _PWM_disableInt
+00009b75   _PWM_disableHrPhaseSync
+00009b7c   _PWM_disableHrPeriod
+00009b83   _PWM_disableDigitalCompareBlankingWindowInversion
+00009b8a   _PWM_disableDigitalCompareBlankingWindow
+00009b91   _PWM_disableDeadBandHalfCycle
+00009b95   _PWM_disableDeadBand
+00009b98   _PWM_disableCounterLoad
+00009b9b   _PWM_disableChopping
+00009b9f   _PWM_disableAutoConvert
+00009ba6   _PWM_decrementDeadBandRisingEdgeDelay
+00009ba9   _PWM_decrementDeadBandFallingEdgeDelay
+00009bac   _PWM_clearTripZone
+00009bb2   _DRV8301_writeSpi
+00009bc8   _DRV8301_writeData
+00009bf1   _DRV8301_readSpi
+00009c27   _DRV8301_setupSpi
+00009ca3   _DRV8301_setSpiHandle
+00009ca5   _DRV8301_setShuntAmpGain
+00009cb9   _DRV8301_setPwmMode
+00009ccd   _DRV8301_setPeakCurrent
+00009ce1   _DRV8301_setOcTwMode
+00009cf5   _DRV8301_setOcOffTimeMode
+00009d09   _DRV8301_setOcMode
+00009d1d   _DRV8301_setOcLevel
+00009d31   _DRV8301_setGpioNumber
+00009d33   _DRV8301_setGpioHandle
+00009d35   _DRV8301_setDcCalMode
+00009d54   _DRV8301_reset
+00009d63   _DRV8301_readData
+00009dce   _DRV8301_isReset
+00009dd5   _DRV8301_isFault
+00009ddb   _DRV8301_init
+00009de4   _DRV8301_getShuntAmpGain
+00009deb   _DRV8301_getPwmMode
+00009df2   _DRV8301_getPeakCurrent
+00009df9   _DRV8301_getOcTwMode
+00009e00   _DRV8301_getOcOffTimeMode
+00009e07   _DRV8301_getOcMode
+00009e0e   _DRV8301_getOcLevel
+00009e15   _DRV8301_getId
+00009e1b   _DRV8301_getFaultType
+00009e36   _DRV8301_getDcCalMode
+00009e48   _DRV8301_enable
+00009e6a   _updateGlobalVariables_motor
+00009edd   _main
+0000a0d0   _ADC_setupSocTrigSrc
+0000a0fb   _ADC_setVoltRefSrc
+0000a10d   _ADC_setTempSensorSrc
+0000a11f   _ADC_setSocTrigSrc
+0000a132   _ADC_setSocSampleDelay
+0000a145   _ADC_setSocFrcWord
+0000a14c   _ADC_setSocFrc
+0000a156   _ADC_setSocChanNumber
+0000a169   _ADC_setSampleOverlapMode
+0000a17e   _ADC_setSampleMode
+0000a196   _ADC_setOffTrim
+0000a19d   _ADC_setIntSrc
+0000a1ba   _ADC_setIntPulseGenMode
+0000a1cc   _ADC_setIntMode
+0000a1e9   _ADC_setDivideSelect
+0000a1fb   _ADC_reset
+0000a206   _ADC_powerUp
+0000a211   _ADC_powerDown
+0000a21c   _ADC_init
+0000a223   _ADC_getDivideSelect
+0000a22b   _ADC_enableVoltRefLoConv
+0000a236   _ADC_enableRefBuffers
+0000a241   _ADC_enableNoOverlapMode
+0000a24c   _ADC_enableInt
+0000a263   _ADC_enableBandGap
+0000a26e   _ADC_enable
+0000a279   _ADC_disableVoltRefLoConv
+0000a284   _ADC_disableRefBuffers
+0000a28f   _ADC_disableNoOverlapMode
+0000a29a   _ADC_disableInt
+0000a2b5   _ADC_disableBandGap
+0000a2c0   _ADC_disable
+0000a2cb   _GPIO_toggle
+0000a2de   _GPIO_setQualificationPeriod
+0000a325   _GPIO_setQualification
+0000a365   _GPIO_setPullup
+0000a380   _GPIO_setPortData
+0000a38b   _GPIO_setMode
+0000a3c5   _GPIO_setLow
+0000a3d8   _GPIO_setHigh
+0000a3eb   _GPIO_setExtInt
+0000a3f6   _GPIO_setDirection
+0000a411   _GPIO_read
+0000a437   _GPIO_lpmSelect
+0000a441   _GPIO_init
+0000a447   _GPIO_getPortData
+0000a44e   _GPIO_getData
+0000a45e   _CLK_setXClkInSrc
+0000a465   _CLK_setWatchDogSrc
+0000a46c   _CLK_setTimer2Src
+0000a473   _CLK_setTimer2PreScale
+0000a47a   _CLK_setOscSrc
+0000a481   _CLK_setOsc2Src
+0000a488   _CLK_setLowSpdPreScaler
+0000a48e   _CLK_setClkOutPreScaler
+0000a495   _CLK_init
+0000a49b   _CLK_enableWatchDogHaltMode
+0000a4a1   _CLK_enableTbClockSync
+0000a4a8   _CLK_enableSpibClock
+0000a4af   _CLK_enableSpiaClock
+0000a4b6   _CLK_enableScibClock
+0000a4bd   _CLK_enableSciaClock
+0000a4c4   _CLK_enablePwmClock
+0000a4cd   _CLK_enableOsc2HaltMode
+0000a4d3   _CLK_enableOsc2
+0000a4d9   _CLK_enableOsc1HaltMode
+0000a4df   _CLK_enableOsc1
+0000a4e5   _CLK_enableLinAClock
+0000a4ec   _CLK_enableI2cClock
+0000a4f3   _CLK_enableHrPwmClock
+0000a4fa   _CLK_enableGpioInputClock
+0000a501   _CLK_enableEqep2Clock
+0000a508   _CLK_enableEqep1Clock
+0000a50f   _CLK_enableEcap1Clock
+0000a516   _CLK_enableEcanaClock
+0000a51d   _CLK_enableCrystalOsc
+0000a523   _CLK_enableCpuTimerClock
+0000a529   _CLK_enableCompClock
+0000a52f   _CLK_enableClkIn
+0000a535   _CLK_enableClaClock
+0000a53c   _CLK_enableAdcClock
+0000a543   _CLK_disableWatchDogHaltMode
+0000a549   _CLK_disableTbClockSync
+0000a550   _CLK_disableSpibClock
+0000a554   _CLK_disableSpiaClock
+0000a55b   _CLK_disableScibClock
+0000a562   _CLK_disableSciaClock
+0000a569   _CLK_disablePwmClock
+0000a573   _CLK_disableOsc2HaltMode
+0000a579   _CLK_disableOsc2
+0000a57f   _CLK_disableOsc1HaltMode
+0000a585   _CLK_disableOsc1
+0000a58b   _CLK_disableLinAClock
+0000a592   _CLK_disableI2cClock
+0000a599   _CLK_disableHrPwmClock
+0000a5a0   _CLK_disableGpioInputClock
+0000a5a7   _CLK_disableEqep2Clock
+0000a5ae   _CLK_disableEqep1Clock
+0000a5b5   _CLK_disableEcap1Clock
+0000a5bc   _CLK_disableEcanaClock
+0000a5c3   _CLK_disableCrystalOsc
+0000a5c9   _CLK_disableCpuTimerClock
+0000a5d0   _CLK_disableCompClock
+0000a5d4   _CLK_disableClkIn
+0000a5da   _CLK_disableClaClock
+0000a5e1   _CLK_disableAdcClock
+0000a5e8   _mainISR
+0000a6a9   _SCI_RX_ISR
+0000a766   _PIE_unregisterSystemIntHandler
+0000a773   _PIE_unregisterPieIntHandler
+0000a784   _PIE_setExtIntPolarity
+0000a794   _PIE_setDefaultIntVectorTable
+0000a7a0   _PIE_registerSystemIntHandler
+0000a7ab   _PIE_registerPieIntHandler
+0000a7ba   _PIE_init
+0000a7c1   _PIE_getIntFlags
+0000a7c8   _PIE_getIntEnables
+0000a7cf   _PIE_getExtIntCount
+0000a7d7   _PIE_forceInt
+0000a7e1   _PIE_enableTimer0Int
+0000a7e4   _PIE_enablePwmTzInt
+0000a7e9   _PIE_enablePwmInt
+0000a7ee   _PIE_enableInt
+0000a7f8   _PIE_enableExtInt
+0000a81b   _PIE_enableCaptureInt
+0000a81f   _PIE_enableAdcInt
+0000a83b   _PIE_enable
+0000a83e   _PIE_disableInt
+0000a849   _PIE_disableExtInt
+0000a856   _PIE_disableCaptureInt
+0000a85a   _PIE_disableAllInts
+0000a864   _PIE_disable
+0000a867   _PIE_clearAllInts
+0000a86a   _PIE_clearAllFlags
+0000a874   _SCI_getTxFifoStatus
+0000a878   _SCI_write_char
+0000a881   _SCI_write_str
+0000a888   _SCI_setTxFifoIntLevel
+0000a88f   _SCI_setTxDelay
+0000a896   _SCI_setRxFifoIntLevel
+0000a89d   _SCI_setPriority
+0000a8a0   _SCI_setParity
+0000a8a4   _SCI_setNumStopBits
+0000a8a8   _SCI_setMode
+0000a8ac   _SCI_setCharLength
+0000a8b0   _SCI_setBaudRate
+0000a8b6   _SCI_resetTxFifo
+0000a8c0   _SCI_resetRxFifo
+0000a8ca   _SCI_resetChannels
+0000a8d4   _SCI_reset
+0000a8d7   _SCI_putDataNonBlocking
+0000a8df   _SCI_putDataBlocking
+0000a8e4   _SCI_init
+0000a8ea   _SCI_getRxFifoStatus
+0000a8ee   _SCI_getDataNonBlocking
+0000a8f7   _SCI_getDataBlocking
+0000a8fb   _SCI_enableTxWake
+0000a8fe   _SCI_enableTxInt
+0000a901   _SCI_enableTxFifoInt
+0000a905   _SCI_enableTxFifoEnh
+0000a909   _SCI_enableTxFifo
+0000a90d   _SCI_enableTx
+0000a910   _SCI_enableSleep
+0000a913   _SCI_enableRxInt
+0000a916   _SCI_enableRxFifoInt
+0000a91a   _SCI_enableRxFifo
+0000a91e   _SCI_enableRxErrorInt
+0000a921   _SCI_enableRx
+0000a924   _SCI_enableParity
+0000a927   _SCI_enableLoopBack
+0000a92a   _SCI_enableChannels
+0000a92e   _SCI_enableAutoBaudAlign
+0000a932   _SCI_enable
+0000a935   _SCI_disableTxWake
+0000a938   _SCI_disableTxInt
+0000a93b   _SCI_disableTxFifoInt
+0000a93f   _SCI_disableTxFifoEnh
+0000a943   _SCI_disableTx
+0000a946   _SCI_disableSleep
+0000a949   _SCI_disableRxInt
+0000a94c   _SCI_disableRxFifoInt
+0000a950   _SCI_disableRxErrorInt
+0000a953   _SCI_disableRx
+0000a956   _SCI_disableParity
+0000a959   _SCI_disableLoopBack
+0000a95c   _SCI_disableAutoBaudAlign
+0000a960   _SCI_disable
+0000a963   _SCI_clearTxFifoInt
+0000a967   _SCI_clearRxFifoOvf
+0000a96b   _SCI_clearRxFifoInt
+0000a96f   _SCI_clearAutoBaudDetect
+0000a973   _log
+0000aa1d   _SPI_setTxFifoIntLevel
+0000aa24   _SPI_setTxDelay
+0000aa27   _SPI_setTriWire
+0000aa2e   _SPI_setSuspend
+0000aa35   _SPI_setSteInv
+0000aa3c   _SPI_setRxFifoIntLevel
+0000aa43   _SPI_setPriority
+0000aa4a   _SPI_setMode
+0000aa4c   _SPI_setClkPolarity
+0000aa50   _SPI_setClkPhase
+0000aa52   _SPI_setCharLength
+0000aa56   _SPI_setBaudRate
+0000aa58   _SPI_resetTxFifo
+0000aa5c   _SPI_resetRxFifo
+0000aa60   _SPI_resetChannels
+0000aa64   _SPI_reset
+0000aa67   _SPI_init
+0000aa6d   _SPI_getTxFifoStatus
+0000aa71   _SPI_getTxBufferStatus
+0000aa74   _SPI_getRxFifoStatus
+0000aa78   _SPI_getIntFlagStatus
+0000aa7b   _SPI_enableTxFifoInt
+0000aa7f   _SPI_enableTxFifoEnh
+0000aa83   _SPI_enableTxFifo
+0000aa87   _SPI_enableTx
+0000aa8a   _SPI_enableRxFifoInt
+0000aa8e   _SPI_enableRxFifo
+0000aa92   _SPI_enableOverRunInt
+0000aa95   _SPI_enableLoopBack
+0000aa98   _SPI_enableInt
+0000aa9b   _SPI_enableChannels
+0000aa9f   _SPI_enable
+0000aaa2   _SPI_disableTxFifoInt
+0000aaa6   _SPI_disableTxFifoEnh
+0000aaaa   _SPI_disableTx
+0000aaad   _SPI_disableRxFifoInt
+0000aab1   _SPI_disableOverRunInt
+0000aab4   _SPI_disableLoopBack
+0000aab7   _SPI_disableInt
+0000aaba   _SPI_clearTxFifoInt
+0000aabe   _SPI_clearRxFifoOvf
+0000aac2   _SPI_clearRxFifoInt
+0000aac6   _exp
+0000ab63   __log
+0000abf0   _pow
+0000ac77   FD$$MPY
+0000acfa   FS$$DIV
+0000ad7d   FS$$SUB
+0000ad82   FS$$ADD
+0000adf5   _PLL_setLockPeriod
+0000adfa   _PLL_setDivideSelect
+0000ae01   _PLL_setClkFreq
+0000ae07   _PLL_resetClkDetect
+0000ae0d   _PLL_init
+0000ae13   _PLL_getLockStatus
+0000ae16   _PLL_getDivideSelect
+0000ae19   _PLL_getClkStatus
+0000ae1c   _PLL_getClkFreq
+0000ae20   _PLL_enableOsc
+0000ae26   _PLL_enableNormRdy
+0000ae2c   _PLL_enableClkDetect
+0000ae32   _PLL_enable
+0000ae38   _PLL_disableOsc
+0000ae3e   _PLL_disableNormRdy
+0000ae44   _PLL_disableClkDetect
+0000ae4a   _PLL_disable
+0000ae50   FS$$MPY
+0000aeaa   _sqrt
+0000aefa   _PWR_setNumStandByClocks
+0000af0c   _PWR_setLowPowerMode
+0000af1e   _PWR_init
+0000af25   _PWR_enableWatchDogInt
+0000af30   _PWR_enableBrownOutReset
+0000af33   _PWR_disableWatchDogInt
+0000af3e   _PWR_disableBrownOutReset
+0000af41   _WDOG_setPreScaler
+0000af4b   _WDOG_setCount
+0000af4d   _WDOG_init
+0000af53   _WDOG_getIntStatus
+0000af56   _WDOG_enableOverRide
+0000af5c   _WDOG_enableInt
+0000af62   _WDOG_enable
+0000af6b   _WDOG_disableOverRide
+0000af71   _WDOG_disableInt
+0000af77   _WDOG_disable
+0000af7f   _WDOG_clearCounter
+0000af87   _OFFSET_setOffset
+0000af89   _OFFSET_setInitCond
+0000af98   _OFFSET_setBeta
+0000afae   _OFFSET_init
+0000afbf   _OFFSET_getBeta
+0000afcc   _c_int00
+0000b010   _ldexp
+0000b04f   _TIMER_setPreScaler
+0000b05d   _TIMER_setEmulationMode
+0000b061   _TIMER_setDecimationFactor
+0000b06f   _TIMER_init
+0000b075   _TIMER_getStatus
+0000b078   _TIMER_enableInt
+0000b07b   _TIMER_disableInt
+0000b07e   _TIMER_clearFlag
+0000b081   _modf
+0000b0b2   _OSC_setTrim
+0000b0bb   _OSC_setFineTrim
+0000b0cc   _OSC_setCoarseTrim
+0000b0d9   _OSC_init
+0000b0df   FS$$TOL
+0000b108   _CPU_init
+0000b10e   _CPU_enableProtectedRegisterWrite
+0000b111   _CPU_enableInt
+0000b115   _CPU_enableGlobalInts
+0000b118   _CPU_enableDebugInt
+0000b11b   _CPU_disableProtectedRegisterWrite
+0000b11e   _CPU_disableInts
+0000b121   _CPU_disableInt
+0000b126   _CPU_disableGlobalInts
+0000b129   _CPU_disableDebugInt
+0000b12c   _CPU_clearIntFlags
+0000b12f   FS$$TOI
+0000b154   I$$DIV
+0000b165   I$$MOD
+0000b176   _FILTER_FO_setNumCoeffs
+0000b17a   _FILTER_FO_setInitialConditions
+0000b17f   _FILTER_FO_setDenCoeffs
+0000b181   _FILTER_FO_init
+0000b187   _FILTER_FO_getNumCoeffs
+0000b18d   _FILTER_FO_getInitialConditions
+0000b194   _FILTER_FO_getDenCoeffs
+0000b197   FS$$TOUL
+0000b1b8   _FLASH_init
+0000b1be   _FLASH_getStandbyWaitStatus
+0000b1c2   _FLASH_getStandbyWaitCount
+0000b1c5   _FLASH_getPowerMode
+0000b1c8   _FLASH_getActiveWaitStatus
+0000b1cc   _FLASH_getActiveWaitCount
+0000b1cf   _FLASH_get3VStatus
+0000b1d2   _FLASH_clear3VStatus
+0000b1d8   FD$$TOL
+0000b1f7   FS$$TOU
+0000b214   FS$$TOFD
+0000b230   I$$TOFS
+0000b24a   L$$TOFS
+0000b264   __args_main
+0000b27d   C$$EXIT
+0000b27d   _abort
+0000b27f   _exit
+0000b296   FS$$CMP
+0000b2ad   _frexp
+0000b2c1   UL$$TOFS
+0000b2d4   U$$TOFS
+0000b2e4   __register_unlock
+0000b2e8   __register_lock
+0000b2ec   __nop
+0000b2f5   _PIE_illegalIsr
+0000b2fa   FS$$NEG
+0000b2ff   ___etext__
+0000b2ff   etext
+0000b300   _gLEDcnt
+0000b301   _gBuzzcnt
+0000b302   _n
+0000b303   _gCounter_updateGlobals
+0000b304   _Flag_Latch_softwareUpdate
+0000b305   _i
+0000b306   _gTorque_Flux_Iq_pu_to_Nm_sf
+0000b308   _m
+0000b30a   _controller_obj
+0000b30c   _gFlux_pu_to_Wb_sf
+0000b30e   _gFlux_pu_to_VpHz_sf
+0000b310   _halHandle
+0000b312   _ctrlHandle
+0000b314   _gTorque_Ls_Id_Iq_pu_to_Nm_sf
+0000b316   _gMaxCurrentSlope
+0000b318   _data
+0000b31c   _gPwmData
+0000b322   _gAdcData
+0000b340   _gDrvSpi8301Vars
+0000b380   _gMotorVars
+0000b400   _gUserParams
+0000b4ac   __unlock
+0000b4ae   __lock
+0000b4b0   ___TI_cleanup_ptr
+0000b4b2   ___TI_dtors_ptr
+0000b4b6   _cpu
+0000b4b7   _errno
+0000b4c0   _hal
+0000b56a   __IQ24sqrt
+0000b5ac   __IQ24sinPU
+0000b5d5   __IQ24cosPU
+0000b5fc   __IQ30toF
+003f861b   _EST_getState
+003f861d   _EST_useZeroIq_ref
+003f8679   _EST_isMotorIdentified
+003f8713   _EST_updateState
+003f89f5   _EST_updateId_ref_pu
+003f8a18   _EST_setRs_pu
+003f8adb   _EST_setMaxCurrentSlope_pu
+003f8ae7   _EST_setLs_q_pu
+003f8af1   _EST_setLs_qFmt
+003f8b45   _EST_setLs_d_pu
+003f8b63   _EST_setIq_ref_pu
+003f8b67   _EST_setIdle_all
+003f8b7a   _EST_setIdle
+003f8b80   _EST_setId_ref_pu
+003f8bdb   _EST_setFlag_enableForceAngle
+003f8c0d   _EST_getAngle_pu
+003f927b   _EST_run
+003f9378   _EST_isOnLine
+003f937f   _EST_isLockRotor
+003f9386   _EST_isIdle
+003f938d   _EST_isError
+003f9453   _EST_get_pu_to_krpm_sf
+003f9458   _EST_get_krpm_to_pu_sf
+003f94c6   _EST_getSpeed_krpm
+003f9513   _EST_getRs_Ohm
+003f95ad   _EST_getRr_Ohm
+003f95b3   _EST_getOneOverDcBus_pu
+003f95bd   _EST_getMaxCurrentSlope_pu
+003f95c9   _EST_getLs_q_pu
+003f95ce   _EST_getLs_q_H
+003f95f0   _EST_getLs_d_pu
+003f95f5   _EST_getLs_d_H
+003f95ff   _EST_getLs_coarse_max_pu
+003f9632   _EST_getIdRated
+003f968e   _EST_getFm_pu
+003f96ab   _EST_getFlux_pu
+003f96be   _EST_getFlux_VpHz
+003f9758   _EST_doSpeedCtrl
+003f9760   _EST_doCurrentCtrl
+003f9806   _CTRL_setupTraj
+003f996a   _CTRL_setupEstOnLineState
+003f99a5   _CTRL_setupEstIdleState
+003f9b43   _CTRL_setupCtrl
+003f9d31   _CTRL_setUserMotorParams
+003f9e64   _CTRL_setEstParams
+003fa5d1   _CTRL_runTraj
+003fa6fb   _CTRL_initCtrl
+003fa721   _CTRL_getVersion
+003fdc30   _IQsinTable
+003fdd30   _IQcosTable
+003fe030   _IQsinTableEnd
+003fe132   _IQcosTableEnd
+003fe132   _IQdivRoundSatTable
+003fe140   _IQdivTable
+003fe342   _IQdivTableEnd
+003fe342   _IQisqrtRoundSatTable
+003fe342   _IQsqrtRoundSatTable
+003fe352   _IQisqrtTable
+003fe352   _IQsqrtTable
+003fe454   _IQatan2HalfPITable
+003fe454   _IQisqrtTableEnd
+003fe454   _IQsqrtTableEnd
+003fe492   _IQatan2Table
+003fe618   _IQ30mpyRndSatTable
+003fe618   _IQatan2TableEnd
+003fe618   _IQmpyRndSatTable
+003fe624   _IQ29mpyRndSatTable
+003fe630   _IQ28mpyRndSatTable
+003fe63c   _IQ27mpyRndSatTable
+003fe648   _IQ26mpyRndSatTable
+003fe654   _IQ25mpyRndSatTable
+003fe660   _IQ24mpyRndSatTable
+003fe66c   _IQ23mpyRndSatTable
+003fe678   _IQ22mpyRndSatTable
+003fe684   _IQ21mpyRndSatTable
+003fe690   _IQ20mpyRndSatTable
+003fe69c   _IQ19mpyRndSatTable
+003fe6a8   _IQ18mpyRndSatTable
+003fe6b4   _IQ17mpyRndSatTable
+003fe6c0   _IQ16mpyRndSatTable
+003fe6cc   _IQ15mpyRndSatTable
+003fe6d8   _IQ14mpyRndSatTable
+003fe6e4   _IQ13mpyRndSatTable
+003fe6f0   _IQ12mpyRndSatTable
+003fe6fc   _IQ11mpyRndSatTable
+003fe708   _IQ10mpyRndSatTable
+003fe714   _IQ9mpyRndSatTable
+003fe720   _IQ8mpyRndSatTable
+003fe72c   _IQ7mpyRndSatTable
+003fe738   _IQ6mpyRndSatTable
+003fe744   _IQ5mpyRndSatTable
+003fe750   _IQ4mpyRndSatTable
+003fe75c   _IQ3mpyRndSatTable
+003fe768   _IQ2mpyRndSatTable
+003fe774   _IQ1mpyRndSatTable
+003fe780   _IQmpyRndSatTableEnd
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[717 symbols]
